@@ -1,6 +1,6 @@
 package fr.sorway.niobium.api.events;
 
-import fr.sorway.niobium.api.data.accounts.PlayerAccount;
+import fr.sorway.niobium.api.data.accounts.IPlayerAccount;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
@@ -9,9 +9,9 @@ import org.jetbrains.annotations.NotNull;
 public class PlayerAccountLoadEvent extends Event {
     private static final HandlerList handlers = new HandlerList();
     private final Player player;
-    private final PlayerAccount account;
+    private final IPlayerAccount account;
 
-    public PlayerAccountLoadEvent(Player player, PlayerAccount account) {
+    public PlayerAccountLoadEvent(Player player, IPlayerAccount account) {
         this.player = player;
         this.account = account;
     }
@@ -25,7 +25,7 @@ public class PlayerAccountLoadEvent extends Event {
         return player;
     }
 
-    public PlayerAccount getAccount() {
+    public IPlayerAccount getAccount() {
         return account;
     }
 }

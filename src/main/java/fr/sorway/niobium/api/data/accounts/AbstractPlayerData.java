@@ -5,7 +5,7 @@ import org.bukkit.entity.Player;
 
 import java.util.UUID;
 
-public abstract class AbstractAccountData {
+public abstract class AbstractPlayerData {
     public UUID uuid;
 
     public String getUUID() {
