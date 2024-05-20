@@ -5,6 +5,7 @@ import org.bukkit.ChatColor;
 import java.util.List;
 
 public interface IRank {
+    int getId();
     String getName();
     String getPrefix();
     String getSuffix();

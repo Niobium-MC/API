@@ -11,6 +11,7 @@ public interface IAccountManager {
     void createAccount(Player player);
     void deleteAccount(Player player);
     void updateAccount(Player player);
+    boolean inDatabase(Player player);
     IPlayerAccount getAccount(UUID uuid);
     IPlayerAccount getAccount(Player player);
 }
