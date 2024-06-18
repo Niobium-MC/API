@@ -1,4 +1,4 @@
-package fr.sorway.niobium.api.managers;
+package fr.sorway.niobium.api.managers.data.account;
 
 import fr.sorway.niobium.api.data.accounts.IPlayerAccount;
 import org.bukkit.entity.Player;
@@ -20,6 +20,14 @@ public interface IAccountManager {
      * @param player the player who logged out
      */
     void onLogout(Player player);
+
+    /**
+     * Retrieves the player account associated with the specified UUID.
+     *
+     * @param player The player whose account is to be loaded.
+     * @return The player account associated with the given UUID, or null if no such account exists.
+     */
+    IPlayerAccount loadAccount(Player player);
 
     /**
      * Creates a new account for the specified player.
@@ -45,18 +53,10 @@ public interface IAccountManager {
     /**
      * Checks if the specified player's account exists in the database.
      *
-     * @param player the player to check
+     * @param uuid the UUID of the player to check
      * @return true if the player's account is in the database, false otherwise
      */
-    boolean inDatabase(Player player);
-
-    /**
-     * Gets the account of the player with the specified UUID.
-     *
-     * @param uuid the UUID of the player
-     * @return the player's account, or null if not found
-     */
-    IPlayerAccount getAccount(UUID uuid);
+    boolean inDatabase(UUID uuid);
 
     /**
      * Gets the account of the specified player.

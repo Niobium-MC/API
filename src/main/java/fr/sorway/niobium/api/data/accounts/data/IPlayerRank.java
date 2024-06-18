@@ -5,6 +5,13 @@ import java.util.Set;
 public interface IPlayerRank {
 
     /**
+     * Sets the active rank of an account.
+     *
+     * @param rank the new active rank of the account
+     */
+    void setActiveRank(IAccountRank rank);
+
+    /**
      * Gets the active rank of the player.
      *
      * @return the active account rank
