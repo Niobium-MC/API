@@ -41,6 +41,17 @@ public interface IRank {
     ChatColor getColor();
 
     /**
+     * Checks if the maintenance access mode is enabled.
+     *
+     * This method returns {@code true} if the system is currently in maintenance mode,
+     * meaning that only users with maintenance privileges have access. Otherwise,
+     * it returns {@code false}, indicating that the system is in normal operation mode.
+     *
+     * @return {@code true} if maintenance access is enabled, {@code false} otherwise.
+     */
+    boolean isMaintenanceAccess();
+
+    /**
      * Gets the list of permissions associated with the rank.
      * The returned list should be immutable to prevent external modifications.
      *

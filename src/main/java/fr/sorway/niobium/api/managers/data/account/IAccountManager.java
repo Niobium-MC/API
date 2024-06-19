@@ -65,4 +65,16 @@ public interface IAccountManager {
      * @return the player's account, or null if not found
      */
     IPlayerAccount getAccount(Player player);
+
+    /**
+     * Retrieves the rank account manager.
+     *
+     * This method returns an instance of {@code IRankAccountManager} which is
+     * responsible for managing rank assignments and removals for player accounts.
+     * The rank account manager provides various functionalities to interact with
+     * and manipulate account ranks.
+     *
+     * @return an instance of {@code IRankAccountManager} responsible for managing player account ranks.
+     */
+    IRankAccountManager getRankAccountManager();
 }
