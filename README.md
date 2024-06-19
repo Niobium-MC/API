@@ -1,4 +1,4 @@
-![Niobium](https://media.discordapp.net/attachments/1035984187968208896/1241875092804337766/logo-2.png?ex=664bc9cf&is=664a784f&hm=d4732d257ed553c91e64d647516e2a7948da87b9a27bba203cf67d54bcd9b81c&=&format=webp&quality=lossless "Niobium-MC logo")
+![Niobium](https://media.discordapp.net/attachments/1126983627700457533/1252599705179783168/logo-2.png?ex=667376a1&is=66722521&hm=c1f20c90bf74e6269c4aeb266936fd8241763b54f7eee158e876c310fe954cd1&=&format=webp&quality=lossless)
 
 ## Niobium - Nionium-API
 
