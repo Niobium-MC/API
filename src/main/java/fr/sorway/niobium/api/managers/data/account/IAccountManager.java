@@ -32,9 +32,12 @@ public interface IAccountManager {
     /**
      * Creates a new account for the specified player.
      *
-     * @param player the player for whom the account will be created
+     * This method initializes and associates a new player account with the given player.
+     *
+     * @param player the player for whom the account will be created. This parameter must not be null.
+     * @param account the account to be associated with the player. This parameter must be properly initialized.
      */
-    void createAccount(Player player);
+    void createAccount(Player player, IPlayerAccount account);
 
     /**
      * Deletes the account of the specified player.
@@ -44,11 +47,15 @@ public interface IAccountManager {
     void deleteAccount(Player player);
 
     /**
-     * Updates the account of the specified player.
+     * Updates the account details of the specified player.
      *
-     * @param player the player whose account will be updated
+     * This method updates the existing account information for the provided player.
+     * It ensures that the player's account reflects the most recent details.
+     *
+     * @param player the player whose account will be updated. This parameter must not be null and must refer to an existing player.
+     * @param account the account containing updated information. This parameter must be non-null and should be correctly initialized with valid data.
      */
-    void updateAccount(Player player);
+    void updateAccount(Player player, IPlayerAccount account);
 
     /**
      * Checks if the specified player's account exists in the database.
