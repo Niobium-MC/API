@@ -38,4 +38,13 @@ public interface IRankAccountManager {
      * @param rank the rank to remove from the player account.
      */
     void removeRank(IPlayerAccount account, IAccountRank rank);
+
+    /**
+     * Vérifie si le compte du joueur a un rang spécifique.
+     *
+     * @param account Le compte du joueur dont on veut vérifier le rang.
+     * @param rank Le rang à vérifier pour le compte du joueur.
+     * @return true si le compte du joueur a le rang spécifié, sinon false.
+     */
+    boolean hasRank(IPlayerAccount account, IAccountRank rank);
 }
