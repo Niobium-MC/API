@@ -24,22 +24,6 @@ public interface IRankAccountManager {
     void unassignRank(IPlayerAccount account, IAccountRank rank);
 
     /**
-     * Adds a rank to the specified player account.
-     *
-     * @param account the player account to which the rank will be added
-     * @param rank the rank to be added to the player's account
-     */
-    void addRank(IPlayerAccount account, IAccountRank rank);
-
-    /**
-     * Removes a specific rank from a player's account.
-     *
-     * @param account the player account from which the rank will be removed.
-     * @param rank the rank to remove from the player account.
-     */
-    void removeRank(IPlayerAccount account, IAccountRank rank);
-
-    /**
      * Vérifie si le compte du joueur a un rang spécifique.
      *
      * @param account Le compte du joueur dont on veut vérifier le rang.
