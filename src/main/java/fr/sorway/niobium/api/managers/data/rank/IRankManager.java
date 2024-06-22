@@ -39,4 +39,12 @@ public interface IRankManager {
      * @return the rank with the specified name, or null if not found
      */
     IRank getRank(String name);
+
+    /**
+     * Retrieves a rank by its identifier.
+     *
+     * @param id the identifier of the rank
+     * @return the rank with the specified identifier, or null if not found
+     */
+    IRank getRank(int id);
 }
