@@ -37,7 +37,7 @@ public interface IAccountManager {
      * @param player the player for whom the account will be created. This parameter must not be null.
      * @param account the account to be associated with the player. This parameter must be properly initialized.
      */
-    void createAccount(Player player, IPlayerAccount account);
+    void createAccount(Player player);
 
     /**
      * Deletes the account of the specified player.
