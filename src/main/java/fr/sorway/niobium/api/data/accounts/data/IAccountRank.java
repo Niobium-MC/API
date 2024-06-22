@@ -17,11 +17,4 @@ public interface IAccountRank {
      * @return the end time as LocalDateTime
      */
     long getEndTime();
-
-    /**
-     * Checks if this rank is the default rank.
-     *
-     * @return true if it is the default rank, false otherwise
-     */
-    boolean isDefault();
 }
