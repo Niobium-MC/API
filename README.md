@@ -19,3 +19,4 @@ L'API Nionium gère plusieurs aspects critiques, notamment :
 - **Gestion des comptes :** Interface `IPlayerAccount`
 - **Gestion des grades :** Interface `IRank`
 - **Gestion des bases de données :** Interface `IDatabaseManager`
+
