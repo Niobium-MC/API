@@ -1,7 +1,5 @@
 package fr.sorway.niobium.api.data.ranks;
 
-import org.bukkit.ChatColor;
-
 import java.util.List;
 
 public interface IRank {
@@ -38,7 +36,7 @@ public interface IRank {
      *
      * @return the rank color
      */
-    ChatColor getColor();
+    String getColor();
 
     /**
      * Checks if the maintenance access mode is enabled.
