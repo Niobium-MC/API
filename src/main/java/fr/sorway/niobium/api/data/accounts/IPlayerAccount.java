@@ -44,6 +44,13 @@ public interface IPlayerAccount {
     String getIpAddress();
 
     /**
+     * Vérifie si le joueur est un nouveau joueur.
+     *
+     * @return true si le joueur est un nouveau joueur, sinon false.
+     */
+    boolean isNewPlayer();
+
+    /**
      * Sets the amount of money available in the shop.
      *
      * @param money the new amount of money in the shop
