@@ -5,7 +5,7 @@ import org.bukkit.ChatColor;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class TextColor {
+public class TextColors {
 
     private static final Pattern HEX_PATTERN = Pattern.compile("#[a-fA-F0-9]{6}");
 
