@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "fr.sorway.niobium"
-version = "1.0-beta.20"
+version = "1.0-beta.21"
 
 repositories {
     mavenCentral()
@@ -12,14 +12,15 @@ repositories {
 }
 
 dependencies {
-    testImplementation(platform("org.junit:junit-bom:5.10.0"))
-    testImplementation("org.junit.jupiter:junit-jupiter")
+    //Minecraft
     compileOnly("io.papermc.paper:paper-api:1.20.4-R0.1-SNAPSHOT")
-    compileOnly("com.zaxxer:HikariCP:5.1.0")
+
+    //HikariCP
+    implementation("com.zaxxer:HikariCP:5.1.0")
 }
 
-java {
-    toolchain.languageVersion.set(JavaLanguageVersion.of(17))
+tasks.getByName<Jar>("jar") {
+    from(configurations.runtimeClasspath.get().map { if (it.isDirectory) it else zipTree(it) })
 }
 
 tasks.test {
