@@ -1,6 +1,7 @@
 package fr.sorway.niobium.api;
 
 import fr.sorway.niobium.api.database.sql.IDatabaseManager;
+import fr.sorway.niobium.api.gui.IGuiManager;
 import fr.sorway.niobium.api.managers.data.account.IAccountManager;
 import fr.sorway.niobium.api.managers.ICommandManager;
 import fr.sorway.niobium.api.managers.data.rank.IRankManager;
@@ -44,6 +45,18 @@ public interface NiobiumAPI {
      * @return the database manager
      */
     IDatabaseManager getDatabaseManager();
+
+    /**
+     * Retrieves the {@link IGuiManager} instance associated with the current context.
+     *
+     * This method provides access to the graphical user interface (GUI) manager
+     * which is responsible for managing the GUI elements and their behavior.
+     *
+     * @return the {@link IGuiManager} instance currently being used.
+     *
+     * @see IGuiManager
+     */
+    IGuiManager getGuiManager();
 
     /**
      * Logs a message with the specified log level.
