@@ -12,6 +12,11 @@ public abstract class Command {
     public final String name;
     public Executor executor = Executor.ALL;
 
+    public Command(String parent) {
+        this.parent = parent;
+        this.name = "";
+    }
+
     public Command(String parent, String name) {
         this.parent = parent;
         this.name = name;
@@ -24,6 +29,7 @@ public abstract class Command {
     }
 
     public abstract void execute(CommandExecutor executor);
+
     public List<String> autoComplete(CommandExecutor executor) {
         return new ArrayList<>();
     }
