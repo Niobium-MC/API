@@ -18,7 +18,7 @@ public class TextFormatter {
         IPlayerAccount account = api.getAccountManager().getAccount(player);
         IRank rank = account.getPlayerRank().getActiveRank().getRank();
 
-        return rank.getSuffix() == null
+        return rank.getSuffix() == null || rank.getSuffix().isEmpty()
                 ? String.format("%s %s%s", rank.getPrefix(), rank.getColor(), player.getName())
                 : String.format("%s %s%s %s", rank.getPrefix(), rank.getColor(), player.getName(), rank.getSuffix());
     }
