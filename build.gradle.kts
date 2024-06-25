@@ -22,6 +22,15 @@ dependencies {
     implementation("net.kyori:adventure-text-minimessage:4.17.0")
 }
 
+//Encoding UTF-8
+tasks.withType<JavaCompile> {
+    options.encoding = "UTF-8"
+}
+
+tasks.withType<Javadoc>{
+    options.encoding = "UTF-8"
+}
+
 tasks.getByName<Jar>("jar") {
     from(configurations.runtimeClasspath.get().map { if (it.isDirectory) it else zipTree(it) })
 }
