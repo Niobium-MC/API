@@ -1,6 +1,6 @@
 package fr.sorway.niobium.api.gui;
 
-import fr.sorway.niobium.api.message.MessageHelper;
+import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
@@ -102,7 +102,7 @@ public class GuiData {
     }
 
     public Inventory build() {
-        this.inventory = Bukkit.createInventory(null, this.size, MessageHelper.translateColors(this.title));
+        this.inventory = Bukkit.createInventory(null, this.size, MiniMessage.miniMessage().deserialize(this.title));
         this.items.forEach(inventoryItem -> this.inventory.setItem(inventoryItem.slot(), inventoryItem.itemStack()));
         return this.inventory;
     }
