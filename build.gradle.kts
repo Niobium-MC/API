@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "fr.sorway.niobium"
-version = "1.0-beta.27"
+version = "1.0-beta.28"
 
 repositories {
     mavenCentral()
@@ -17,6 +17,9 @@ dependencies {
 
     //HikariCP
     implementation("com.zaxxer:HikariCP:5.1.0")
+
+    //Message
+    implementation("net.kyori:adventure-text-minimessage:4.17.0")
 }
 
 tasks.getByName<Jar>("jar") {

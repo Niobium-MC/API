@@ -5,6 +5,7 @@ import fr.sorway.niobium.api.gui.IGuiManager;
 import fr.sorway.niobium.api.managers.data.account.IAccountManager;
 import fr.sorway.niobium.api.managers.ICommandManager;
 import fr.sorway.niobium.api.managers.data.rank.IRankManager;
+import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.logging.Level;
@@ -57,6 +58,18 @@ public interface NiobiumAPI {
      * @see IGuiManager
      */
     IGuiManager getGuiManager();
+
+    /**
+     * Retrieves a message object of type MiniMessage.
+     * <p>
+     * This method is used to obtain the current MiniMessage.
+     * It might be used for various purposes such as displaying
+     * the message content or processing it further.
+     * </p>
+     *
+     * @return a {@code MiniMessage} object containing the message details.
+     */
+    MiniMessage getMessage();
 
     /**
      * Logs a message with the specified log level.
