@@ -10,7 +10,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class MessageHelper {
-    public static final String PREFIX = "<#3d61f1><bold>Niobium <gray>» <reset>";
+    public static final String PREFIX = "<#3d61f1><bold>Niobium</bold> <gray>» <reset>";
 
     /**
      * Récupère le nom complet du joueur, incluant son préfixe, son suffixe, et sa couleur de rang.
