@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "fr.sorway.niobium"
-version = "1.0-beta.28"
+version = "1.0-beta.29"
 
 repositories {
     mavenCentral()
