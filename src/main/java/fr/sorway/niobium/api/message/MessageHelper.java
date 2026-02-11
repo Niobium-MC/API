@@ -51,13 +51,28 @@ public final class MessageHelper {
      * @param player L'instance du joueur dont on veut récupérer le nom complet.
      * @return Une chaîne de caractères représentant le nom complet du joueur avec son rang.
      */
-    public static String playerName(NiobiumAPI api, Player player) {
+
+    public static Component playerName(NiobiumAPI api, Player player) {
         IPlayerAccount account = api.getAccountManager().getAccount(player);
         IRank rank = account.getPlayerRank().getActiveRank().getRank();
 
-        return rank.getSuffix() == null || rank.getSuffix().isEmpty()
-                ? String.format("%s %s%s", rank.getPrefix(), rank.getColor(), player.getName())
-                : String.format("%s %s%s %s", rank.getPrefix(), rank.getColor(), player.getName(), rank.getSuffix());
+        Component component = Component.empty();
+
+        // Prefix
+        if (rank.getPrefix() != null && !rank.getPrefix().isEmpty())
+            component = component.append(MessageParser.parse(rank.getPrefix() + " "));
+
+        // Couleur du joueur
+        TextColor color = MessageParser.parse(rank.getColor()).color();
+
+        // Nom du joueur
+        component = component.append(Component.text(player.getName(), color));
+
+        // Suffix
+        if (rank.getSuffix() != null && !rank.getSuffix().isEmpty())
+            component = component.append(MessageParser.parse(" " + rank.getSuffix()));
+
+        return component;
     }
 
     /**
