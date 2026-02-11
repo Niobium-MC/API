@@ -1,6 +1,7 @@
-package fr.sorway.niobium.api.managers.data.account;
+package fr.sorway.niobium.api.managers.accounts;
 
 import fr.sorway.niobium.api.data.accounts.IPlayerAccount;
+import fr.sorway.niobium.api.managers.accounts.rank.IRankAccountManager;
 import org.bukkit.entity.Player;
 
 import java.util.UUID;

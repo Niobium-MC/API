@@ -1,4 +1,4 @@
-package fr.sorway.niobium.api.data.accounts.data;
+package fr.sorway.niobium.api.data.accounts.rank;
 
 import java.util.Set;
 

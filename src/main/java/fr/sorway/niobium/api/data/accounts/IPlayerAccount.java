@@ -1,6 +1,6 @@
 package fr.sorway.niobium.api.data.accounts;
 
-import fr.sorway.niobium.api.data.accounts.data.IPlayerRank;
+import fr.sorway.niobium.api.data.accounts.rank.IPlayerRank;
 
 import java.util.UUID;
 
@@ -37,6 +37,13 @@ public interface IPlayerAccount {
     UUID getUUID();
 
     /**
+     * Récupère le pseudo (nom d'utilisateur Minecraft) associé à un joueur.
+     *
+     * @return le pseudo Minecraft du joueur.
+     */
+    String getPseudo();
+
+    /**
      * Gets the IP address of the player.
      *
      * @return the player's IP address
@@ -49,20 +56,6 @@ public interface IPlayerAccount {
      * @return true si le joueur est un nouveau joueur, sinon false.
      */
     boolean isNewPlayer();
-
-    /**
-     * Sets the amount of money available in the shop.
-     *
-     * @param money the new amount of money in the shop
-     */
-    void setShopMoney(long money);
-
-    /**
-     * Gets the amount of shop money the player has.
-     *
-     * @return the player's shop money
-     */
-    long getShopMoney();
 
     /**
      * Gets the account creation time.

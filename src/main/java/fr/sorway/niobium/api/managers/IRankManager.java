@@ -1,4 +1,4 @@
-package fr.sorway.niobium.api.managers.data.rank;
+package fr.sorway.niobium.api.managers;
 
 import fr.sorway.niobium.api.data.ranks.IRank;
 

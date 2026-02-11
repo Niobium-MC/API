@@ -2,9 +2,9 @@ package fr.sorway.niobium.api;
 
 import fr.sorway.niobium.api.database.sql.IDatabaseManager;
 import fr.sorway.niobium.api.gui.IGuiManager;
-import fr.sorway.niobium.api.managers.data.account.IAccountManager;
+import fr.sorway.niobium.api.managers.accounts.IAccountManager;
 import fr.sorway.niobium.api.managers.ICommandManager;
-import fr.sorway.niobium.api.managers.data.rank.IRankManager;
+import fr.sorway.niobium.api.managers.IRankManager;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.plugin.java.JavaPlugin;
 

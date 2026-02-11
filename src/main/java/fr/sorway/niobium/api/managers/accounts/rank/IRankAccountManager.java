@@ -1,7 +1,7 @@
-package fr.sorway.niobium.api.managers.data.account;
+package fr.sorway.niobium.api.managers.accounts.rank;
 
 import fr.sorway.niobium.api.data.accounts.IPlayerAccount;
-import fr.sorway.niobium.api.data.accounts.data.IAccountRank;
+import fr.sorway.niobium.api.data.accounts.rank.IAccountRank;
 
 public interface IRankAccountManager {
 
