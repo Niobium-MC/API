@@ -63,7 +63,7 @@ public final class MessageHelper {
             component = component.append(MessageParser.parse(rank.getPrefix() + " "));
 
         // Couleur du joueur
-        TextColor color = MessageParser.parse(rank.getColor()).color();
+        TextColor color = TextColor.fromHexString(rank.getColor().replaceAll("<", "").replaceAll(">", ""));
 
         // Nom du joueur
         component = component.append(Component.text(player.getName(), color));
