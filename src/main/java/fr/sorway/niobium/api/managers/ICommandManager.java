@@ -6,7 +6,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 import java.util.Set;
 
 public interface ICommandManager {
-
     /**
      * Registers a command with the specified plugin.
      *
@@ -16,9 +15,12 @@ public interface ICommandManager {
     void register(JavaPlugin plugin, Command command);
 
     /**
-     * Retrieves the set of registered commands.
+     * Récupère un ensemble de toutes les commandes disponibles.
+     * Cette méthode retourne un {@link Set} contenant toutes les commandes accessibles,
+     * indépendamment des plugins spécifiques.
      *
-     * @return a set of registered commands
+     * @return un {@link Set} contenant toutes les commandes disponibles. Si aucune commande n'est
+     *         disponible, une collection vide est retournée.
      */
     Set<Command> getCommands();
 }

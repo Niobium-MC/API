@@ -6,5 +6,6 @@ import java.util.UUID;
 
 public interface IGuiManager {
     Map<UUID, GuiData> getGuis();
-    List<UUID> getOpenedGui();
+    List<UUID> getOpenedGuis();
 }
+

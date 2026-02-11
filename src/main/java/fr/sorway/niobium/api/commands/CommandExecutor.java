@@ -3,9 +3,13 @@ package fr.sorway.niobium.api.commands;
 import fr.sorway.niobium.api.NiobiumAPI;
 import org.bukkit.command.CommandSender;
 
-public record CommandExecutor(NiobiumAPI api, CommandSender sender, String[] args, Command.Executor executor) {
+import java.util.List;
 
-    public void send(CommandSender sender, String message) {
-        sender.sendMessage(api.getMessage().deserialize(message));
+public record CommandExecutor(NiobiumAPI api, CommandSender sender, String[] args, Command.Executor executor, List<ArgumentResult<?>> parsedArguments) {
+
+    @SuppressWarnings("unchecked")
+    public <T> T getArgument(int index) {
+        if (index < 0 || index >= parsedArguments.size()) return null;
+        return (T) parsedArguments.get(index).get();
     }
 }

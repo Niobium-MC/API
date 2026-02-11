@@ -18,4 +18,12 @@ public class ItemClickable implements IClickable {
         if (!this.clickableMap.containsKey(slot))
             this.clickableMap.put(slot, clickable);
     }
+
+    public boolean hasClickable(int slot) {
+        return this.clickableMap.containsKey(slot);
+    }
+
+    public void removeClickable(int slot) {
+        this.clickableMap.remove(slot);
+    }
 }
