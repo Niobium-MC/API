@@ -11,7 +11,9 @@ public enum ArgumentType {
     LONG(LongArgument::new),
     BOOLEAN(BooleanArgument::new),
     PLAYER(PlayerArgument::new),
-    OFFLINE_PLAYER(OfflinePlayerArgument::new);
+    OFFLINE_PLAYER(OfflinePlayerArgument::new),
+    GAMEMODE(GameModeArgument::new),
+    RANK(RankArgument::new);
 
     private final Supplier<Argument<?>> supplier;
 
