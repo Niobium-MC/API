@@ -1,6 +1,7 @@
 package fr.sorway.niobium.api.managers;
 
 import fr.sorway.niobium.api.data.ranks.IRank;
+import org.bukkit.entity.Player;
 
 import java.util.Optional;
 import java.util.Set;
@@ -34,16 +35,20 @@ public interface IRankManager {
     void loadRanks();
 
     /**
-     * Applies the rank's tab list formatting to the associated user.
+     * Applique le classement (rank) spécifié au joueur donné,
+     * en mettant à jour son affichage dans la tablist.
      *
-     * This method updates the user's appearance in the tab list
-     * according to the rank configuration, such as prefix,
-     * suffix, and tab color.
+     * <p>Cette méthode modifie généralement :
+     * <ul>
+     *     <li>Le préfixe/suffixe affiché dans la tablist</li>
+     *     <li>L'ordre du joueur dans la liste</li>
+     *     <li>Les éventuels paramètres liés au rang (couleur, priorité, etc.)</li>
+     * </ul>
      *
-     * Implementations should ensure that any existing formatting
-     * is properly replaced or refreshed.
+     * @param player le joueur auquel appliquer le rank
+     * @param rank le rank à appliquer au joueur
      */
-    void applyRankTab();
+    void applyRankTab(Player player, IRank rank);
 
     /**
      * Retrieves a rank by its name.
