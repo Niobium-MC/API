@@ -42,7 +42,7 @@ public final class MessageHelper {
      * Préfixe par défaut utilisé pour tous les messages envoyés via cette classe.
      * Formaté en utilisant MiniMessage (couleur personnalisée et texte en gras).
      */
-    public static final Component PREFIX_COMPONENT = MiniMessage.miniMessage().deserialize("<#0984e3><bold>Niobium</bold> <gray>» <reset><white>");
+    public static final Component PREFIX_COMPONENT = MiniMessage.miniMessage().deserialize("<#74b9ff><bold>Niobium</bold> <gray>» <reset><white>");
 
     /**
      * Récupère le nom complet du joueur, incluant son préfixe, son suffixe, et sa couleur de rang.
