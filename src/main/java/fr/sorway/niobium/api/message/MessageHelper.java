@@ -185,7 +185,7 @@ public final class MessageHelper {
      */
     public static void sendError(Player player, String message) {
         Component parsed = MessageParser.parse(message);
-        sendError(player, forceColor(parsed, MessageColor.ERROR_COLOR));
+        sendError(player, PREFIX_COMPONENT.append(forceColor(parsed, MessageColor.ERROR_COLOR)));
     }
 
     /**
@@ -210,7 +210,7 @@ public final class MessageHelper {
      */
     public static void sendError(CommandSender sender, String message) {
         Component parsed = MessageParser.parse(message);
-        sendError(sender, forceColor(parsed, MessageColor.ERROR_COLOR));
+        sendError(sender, PREFIX_COMPONENT.append(forceColor(parsed, MessageColor.ERROR_COLOR)));
     }
 
     /**
