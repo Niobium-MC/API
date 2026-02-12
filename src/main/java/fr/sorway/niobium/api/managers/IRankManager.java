@@ -34,6 +34,18 @@ public interface IRankManager {
     void loadRanks();
 
     /**
+     * Applies the rank's tab list formatting to the associated user.
+     *
+     * This method updates the user's appearance in the tab list
+     * according to the rank configuration, such as prefix,
+     * suffix, and tab color.
+     *
+     * Implementations should ensure that any existing formatting
+     * is properly replaced or refreshed.
+     */
+    void applyRankTab();
+
+    /**
      * Retrieves a rank by its name.
      *
      * @param name the name of the rank to search for
