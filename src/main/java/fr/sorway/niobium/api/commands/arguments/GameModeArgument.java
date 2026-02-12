@@ -24,6 +24,9 @@ public class GameModeArgument implements Argument<GameMode> {
 
     @Override
     public List<String> autoComplete(NiobiumAPI api, CommandSender sender, String input) {
-        return Arrays.stream(GameMode.values()).map(GameMode::name).toList();
+        return Arrays.stream(GameMode.values())
+                .map(GameMode::name)
+                .map(String::toLowerCase)
+                .toList();
     }
 }
