@@ -9,7 +9,14 @@ public record CommandExecutor(NiobiumAPI api, CommandSender sender, String[] arg
 
     @SuppressWarnings("unchecked")
     public <T> T getArgument(int index) {
-        if (index < 0 || index >= parsedArguments.size()) return null;
-        return (T) parsedArguments.get(index).get();
+        if (index < 0 || index >= this.parsedArguments.size())
+            return null;
+
+        Object value = this.parsedArguments.get(index);
+
+        if (value == null)
+            return null;
+
+        return (T) ((ArgumentResult<?>) value).get();
     }
 }
