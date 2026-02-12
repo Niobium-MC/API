@@ -7,14 +7,15 @@ import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextDecoration;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.enchantments.Enchantment;
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.Damageable;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SkullMeta;
 
-import java.lang.reflect.Field;
 import java.util.*;
 
 public class ItemBuilder {
@@ -28,6 +29,7 @@ public class ItemBuilder {
     private boolean unbreakable = false;
     private int damage = 0;
     private String customSkullTexture;
+    private OfflinePlayer playerHead;
 
     public ItemBuilder(Material material) {
         this.itemStack = new ItemStack(material);
@@ -134,6 +136,11 @@ public class ItemBuilder {
         return this;
     }
 
+    public ItemBuilder playerHead(OfflinePlayer player) {
+        this.playerHead = player;
+        return this;
+    }
+
     public ItemBuilder hideAllAttributes() {
         this.flag(ItemFlag.values());
         return this;
@@ -169,14 +176,18 @@ public class ItemBuilder {
 
         itemStack.setItemMeta(itemMeta);
 
-        if (itemStack.getType() == Material.PLAYER_HEAD && customSkullTexture != null) {
-            this.itemStack.editMeta(SkullMeta.class, (skullMeta) -> {
-                final UUID uuid = UUID.randomUUID();
-                final PlayerProfile playerProfile = Bukkit.createProfile(uuid, uuid.toString().substring(0, 16));
+        if (itemStack.getType() == Material.PLAYER_HEAD) {
+            if (customSkullTexture != null) {
+                this.itemStack.editMeta(SkullMeta.class, (skullMeta) -> {
+                    final UUID uuid = UUID.randomUUID();
+                    final PlayerProfile playerProfile = Bukkit.createProfile(uuid, uuid.toString().substring(0, 16));
 
-                playerProfile.setProperty(new ProfileProperty("textures", customSkullTexture));
-                skullMeta.setPlayerProfile(playerProfile);
-            });
+                    playerProfile.setProperty(new ProfileProperty("textures", customSkullTexture));
+                    skullMeta.setPlayerProfile(playerProfile);
+                });
+            } else if (playerHead != null) {
+                this.itemStack.editMeta(SkullMeta.class, skullMeta -> skullMeta.setOwningPlayer(playerHead));
+            }
         }
 
         return itemStack;
