@@ -16,7 +16,7 @@ public interface IPlayerAccount {
      *
      * @return the unique identifier of the player's account as an integer
      */
-    int getId();
+    int id();
 
     /**
      * Retrieves the universally unique identifier (UUID) of the player's account.
@@ -34,21 +34,21 @@ public interface IPlayerAccount {
      *
      * @return the UUID of the player's account as a {@link java.util.UUID} object
      */
-    UUID getUUID();
+    UUID uuid();
 
     /**
      * Récupère le pseudo (nom d'utilisateur Minecraft) associé à un joueur.
      *
      * @return le pseudo Minecraft du joueur.
      */
-    String getPseudo();
+    String pseudo();
 
     /**
      * Gets the IP address of the player.
      *
      * @return the player's IP address
      */
-    String getIpAddress();
+    String ipAddress();
 
     /**
      * Vérifie si le joueur est un nouveau joueur.
@@ -62,12 +62,12 @@ public interface IPlayerAccount {
      *
      * @return the creation time as LocalDateTime
      */
-    long getCreatedAt();
+    long createdAt();
 
     /**
      * Gets the player's rank information.
      *
      * @return the player's rank
      */
-    IPlayerRank getPlayerRank();
+    IPlayerRank playerRank();
 }

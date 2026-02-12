@@ -16,12 +16,12 @@ public interface IPlayerRank {
      *
      * @return the active account rank
      */
-    IAccountRank getActiveRank();
+    IAccountRank activeRank();
 
     /**
      * Gets all ranks associated with the player.
      *
      * @return a set of all account ranks
      */
-    Set<IAccountRank> getRanks();
+    Set<IAccountRank> ranks();
 }

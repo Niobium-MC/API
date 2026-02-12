@@ -9,12 +9,12 @@ public interface IAccountRank {
      *
      * @return the rank
      */
-    IRank getRank();
+    IRank rank();
 
     /**
      * Gets the end time of the rank.
      *
      * @return the end time as LocalDateTime
      */
-    long getEndTime();
+    long endTime();
 }

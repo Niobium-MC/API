@@ -54,23 +54,23 @@ public final class MessageHelper {
 
     public static Component playerName(NiobiumAPI api, Player player) {
         IPlayerAccount account = api.getAccountManager().getAccount(player);
-        IRank rank = account.getPlayerRank().getActiveRank().getRank();
+        IRank rank = account.playerRank().activeRank().rank();;
 
         Component component = Component.empty();
 
         // Prefix
-        if (rank.getPrefix() != null && !rank.getPrefix().isEmpty())
-            component = component.append(MessageParser.parse(rank.getPrefix() + " "));
+        if (rank.prefix() != null && !rank.prefix().isEmpty())
+            component = component.append(MessageParser.parse(rank.prefix() + " "));
 
         // Couleur du joueur
-        TextColor color = TextColor.fromHexString(rank.getColor().replaceAll("<", "").replaceAll(">", ""));
+        TextColor color = TextColor.fromHexString(rank.color().replaceAll("<", "").replaceAll(">", ""));
 
         // Nom du joueur
         component = component.append(Component.text(player.getName(), color));
 
         // Suffix
-        if (rank.getSuffix() != null && !rank.getSuffix().isEmpty())
-            component = component.append(MessageParser.parse(" " + rank.getSuffix()));
+        if (rank.suffix() != null && !rank.suffix().isEmpty())
+            component = component.append(MessageParser.parse(" " + rank.suffix()));
 
         return component;
     }

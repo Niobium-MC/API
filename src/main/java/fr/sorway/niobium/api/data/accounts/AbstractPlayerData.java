@@ -17,7 +17,7 @@ public abstract class AbstractPlayerData {
      *
      * @return the UUID of the player
      */
-    public UUID getUUID() {
+    public UUID uuid() {
         return this.uuid;
     }
 
@@ -26,7 +26,7 @@ public abstract class AbstractPlayerData {
      *
      * @return the UUID of the player
      */
-    public String getUUIDAsString() {
+    public String uuidAsString() {
         return this.uuid.toString();
     }
 
@@ -35,7 +35,7 @@ public abstract class AbstractPlayerData {
      *
      * @return the Player object or null if the player is not online
      */
-    Player getPlayer() {
+    Player player() {
         return Bukkit.getPlayer(this.uuid);
     }
 }

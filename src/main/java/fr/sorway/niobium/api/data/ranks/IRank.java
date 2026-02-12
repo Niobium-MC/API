@@ -8,35 +8,35 @@ public interface IRank {
      *
      * @return the rank ID
      */
-    int getId();
+    int id();
 
     /**
      * Gets the name of the rank.
      *
      * @return the rank name
      */
-    String getName();
+    String name();
 
     /**
      * Gets the prefix of the rank.
      *
      * @return the rank prefix
      */
-    String getPrefix();
+    String prefix();
 
     /**
      * Gets the suffix of the rank.
      *
      * @return the rank suffix
      */
-    String getSuffix();
+    String suffix();
 
     /**
      * Gets the color associated with the rank.
      *
      * @return the rank color
      */
-    String getColor();
+    String color();
 
     /**
      * Checks if the maintenance access mode is enabled.

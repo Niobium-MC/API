@@ -2,6 +2,7 @@ package fr.sorway.niobium.api.managers;
 
 import fr.sorway.niobium.api.data.ranks.IRank;
 
+import java.util.Optional;
 import java.util.Set;
 
 public interface IRankManager {
@@ -35,16 +36,21 @@ public interface IRankManager {
     /**
      * Retrieves a rank by its name.
      *
-     * @param name the name of the rank
-     * @return the rank with the specified name, or null if not found
+     * @param name the name of the rank to search for
+     * @return an {@link Optional} containing the found {@link IRank}
+     *         if a rank with the given name exists,
+     *         or {@link Optional#empty()} if no rank matches
+     * @throws IllegalArgumentException if name is null or empty
      */
-    IRank getRank(String name);
+    Optional<IRank> getRank(String name);
 
     /**
-     * Retrieves a rank by its identifier.
+     * Retrieves a rank by its unique identifier.
      *
-     * @param id the identifier of the rank
-     * @return the rank with the specified identifier, or null if not found
+     * @param id the unique identifier of the rank
+     * @return an {@link Optional} containing the found {@link IRank}
+     *         if a rank with the given id exists,
+     *         or {@link Optional#empty()} if no rank matches
      */
-    IRank getRank(int id);
+    Optional<IRank> getRank(int id);
 }
