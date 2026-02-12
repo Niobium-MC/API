@@ -14,12 +14,12 @@ public class GameModeArgument implements Argument<GameMode> {
     @Override
     public boolean check(NiobiumAPI api, CommandSender sender, String input) {
         return Arrays.stream(GameMode.values())
-                .anyMatch(gameMode -> gameMode.name().equalsIgnoreCase(input));
+                .anyMatch(gameMode -> gameMode.name().equalsIgnoreCase(input.toUpperCase()));
     }
 
     @Override
     public ArgumentResult<GameMode> parse(NiobiumAPI api, CommandSender sender, String input) {
-        return new ArgumentResult<>(GameMode.valueOf(input), true);
+        return new ArgumentResult<>(GameMode.valueOf(input.toUpperCase()), true);
     }
 
     @Override
