@@ -35,10 +35,21 @@ public abstract class Command {
     }
 
     public Command addArgument(CommandArgument<?>... arguments) {
+        boolean foundOptional = false;
+
         for (int i = 0; i < arguments.length; i++) {
-            if (arguments[i].getArgument() instanceof DescriptionArgument && i != arguments.length - 1)
+            final CommandArgument<?> argument = arguments[i];
+
+            if (argument.getArgument() instanceof DescriptionArgument && i != arguments.length - 1)
                 throw new IllegalArgumentException("L'argument DESCRIPTION doit être le dernier dans la liste des arguments.");
+
+            if (foundOptional && !argument.isOptional())
+                throw new IllegalArgumentException("Un argument obligatoire ne peut pas venir après un argument optionnel.");
+
+            if (argument.isOptional())
+                foundOptional = true;
         }
+
         this.arguments = List.of(arguments);
         return this;
     }
