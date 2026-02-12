@@ -5,7 +5,9 @@ import fr.sorway.niobium.api.gui.IGuiManager;
 import fr.sorway.niobium.api.managers.accounts.IAccountManager;
 import fr.sorway.niobium.api.managers.ICommandManager;
 import fr.sorway.niobium.api.managers.IRankManager;
+import fr.sorway.niobium.api.utils.Servers;
 import net.kyori.adventure.text.minimessage.MiniMessage;
+import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.logging.Level;
@@ -79,5 +81,9 @@ public interface NiobiumAPI {
      */
     default void log(Level level, String message) {
         getPlugin().getLogger().log(level, message);
+    }
+
+    default Servers getServer() {
+        return Servers.getServer(PlainTextComponentSerializer.plainText().serialize(getPlugin().getServer().motd()).replace("[", "").replace("]", ""));
     }
 }
