@@ -60,14 +60,14 @@ public final class MessageHelper {
         Component component = Component.empty();
 
         // Prefix
-        if (rank.prefix() != null && rank.prefix() != null)
+        if (rank.prefix() != null && !rank.prefix().isEmpty())
             component = component.append(MessageParser.parse(rank.prefix() + " "));
 
         // Nom du joueur
         component = component.append(Component.text(player.getName(), rank.tabColor()));
 
         // Suffix
-        if (rank.suffix() != null && rank.suffix() != null)
+        if (rank.suffix() != null && !rank.suffix().isEmpty())
             component = component.append(MessageParser.parse(" " + rank.suffix()));
 
         return component;
