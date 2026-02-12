@@ -4,6 +4,7 @@ import fr.sorway.niobium.api.NiobiumAPI;
 import fr.sorway.niobium.api.data.accounts.IPlayerAccount;
 import fr.sorway.niobium.api.data.ranks.IRank;
 import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.NamedTextColor;
 import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
@@ -59,17 +60,14 @@ public final class MessageHelper {
         Component component = Component.empty();
 
         // Prefix
-        if (rank.prefix() != null && !rank.prefix().isEmpty())
+        if (rank.prefix() != null && rank.prefix() != null)
             component = component.append(MessageParser.parse(rank.prefix() + " "));
 
-        // Couleur du joueur
-        TextColor color = TextColor.fromHexString(rank.tabColor().replaceAll("<", "").replaceAll(">", ""));
-
         // Nom du joueur
-        component = component.append(Component.text(player.getName(), color));
+        component = component.append(Component.text(player.getName(), rank.tabColor()));
 
         // Suffix
-        if (rank.suffix() != null && !rank.suffix().isEmpty())
+        if (rank.suffix() != null && rank.suffix() != null)
             component = component.append(MessageParser.parse(" " + rank.suffix()));
 
         return component;

@@ -1,5 +1,8 @@
 package fr.sorway.niobium.api.data.ranks;
 
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.NamedTextColor;
+
 import java.util.List;
 
 /**
@@ -44,7 +47,7 @@ public interface IRank {
      *
      * @return the rank prefix
      */
-    String prefix();
+    Component prefix();
 
     /**
      * Gets the suffix of the rank.
@@ -53,14 +56,14 @@ public interface IRank {
      *
      * @return the rank suffix
      */
-    String suffix();
+    Component suffix();
 
     /**
      * Gets the color used for displaying the rank in the tab list.
      *
      * @return the tab list color representation
      */
-    String tabColor();
+    NamedTextColor tabColor();
 
     /**
      * Gets the color used for displaying the rank in chat.
